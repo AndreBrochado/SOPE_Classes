@@ -17,12 +17,17 @@ int main(void)
             exit(0);
         }
     }
+    int j = 0;
     for (i=1 ;i<=4; i++ ) {
         printf("PARENT: working hard (task no. %d) ...\n",i);
         n=20; while((n=sleep(n))!=0);
         printf("PARENT: end of task no. %d\n",i);
-        printf("PARENT: waiting for child no. %d ...\n",i);
+	do{
+        printf("PARENT: waiting for child no. %d ...\n",j);
         pid=waitpid(-1,&status,WNOHANG);
+	i++;
+	j++;
+	}while(pid != 0);
         if (pid != -1 && pid != 0)
             printf("PARENT: child with PID=%d terminated with exit code %d\n",pid,WEXITSTATUS(status));
     }
