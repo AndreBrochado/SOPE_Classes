@@ -29,3 +29,6 @@ int main(void)
     exit(0);
 }
 
+//execution note:
+//on CTRL+C, program is interrupted and all its children too.
+//on sending sigint: only kills the given process
