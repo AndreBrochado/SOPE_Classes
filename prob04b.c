@@ -22,8 +22,8 @@ int main(void)
         n=20; while((n=sleep(n))!=0);
         printf("PARENT: end of task no. %d\n",i);
         printf("PARENT: waiting for child no. %d ...\n",i);
-        pid=wait(&status);
-        if (pid != -1)
+        pid=waitpid(-1,&status,WNOHANG);
+        if (pid != -1 && pid != 0)
             printf("PARENT: child with PID=%d terminated with exit code %d\n",pid,WEXITSTATUS(status));
     }
     exit(0);
