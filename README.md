@@ -4,7 +4,7 @@
 
 If you're using this for the first time, run this command:
 
-`git clone https://github.com/AndreBrochado/SOPE_Classes.git`
+`git clone https://github.com/andrebreis/SOPE_Classes.git`
 
 Then, for getting the solution of exercises of a class, run this command:
 
